@@ -1,0 +1,236 @@
+.navbar {
+    height: 80px;
+
+    .wrapper {
+        height: 100%;
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .item {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .center {
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            .icons {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                color: gray;
+                cursor: pointer;
+
+                .cartIcon {
+                    position: relative;
+                    span {
+                        font-size: 12px;
+                        background-color: #2879fe;
+                        color: white;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: -10px;
+                        top: -10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    background: #ffffff;
+}
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 0;
+    opacity: 0;
+}
+.header__row {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 98%;
+}
+.header__icon-wrapper {
+    display: none;
+}
+.menu__body {
+    position: relative;
+    z-index: 3;
+}
+
+@media (max-width: 1305px) {
+    .navbar {
+        .wrapper {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+    .header__row {
+        height: 130px;
+    }
+}
+@media (max-width: 767px) {
+    .header::before {
+        z-index: 4;
+        opacity: 1;
+    }
+    .header__icon-wrapper {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 10px;
+        z-index: 5;
+    }
+    .header__icon {
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 5;
+    }
+    .header__icon::before,
+    .header__icon::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #f06009;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header__icon::before {
+        top: 0;
+    }
+    .header__icon::after {
+        bottom: 0;
+    }
+    .header__icon span {
+        position: absolute;
+        left: 0;
+        top: 9px;
+        height: 1px;
+        width: 100%;
+        background-color: #f06009;
+        transition: all 0.3s ease 0s;
+    }
+    .header__menu {
+        position: fixed;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #f0f0f0;
+        z-index: 3;
+        transition: all 0.3s ease 0s;
+        overflow: auto;
+    }
+    .header__menu.active {
+        top: 0;
+    }
+    .menu__body {
+        padding-top: 100px;
+        padding-left: 15px;
+    }
+    .header {
+        top: 0;
+        height: 75px;
+    }
+    /*-------------The beginning of the active menu icon-------------------*/
+    .header__icon.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    .header__icon.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .header__icon.active span {
+        transform: scale(0);
+    }
+    /*-------------The end of the active menu icon-------------------*/
+    body.lock {
+        overflow: hidden;
+    }
+    .navbar {
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+@media (max-width: 580px) {
+    .navbar {
+        .wrapper {
+            .right {
+                position: relative;
+
+                .icons {
+                    transform: translate(50%, 0);
+                    position: absolute;
+                    bottom: -70px;
+                    right: 50%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 430px) {
+    .navbar {
+        .wrapper {
+            .right {
+                gap: 10px;
+                .item {
+                    .link {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .left {
+                gap: 10px;
+                .item {
+                    .link {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .center {
+                .link {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+/*-------------The end of the media requests-------------------*/

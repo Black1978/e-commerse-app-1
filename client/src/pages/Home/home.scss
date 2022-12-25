@@ -1,0 +1,9 @@
+.home {
+    margin-top: 80px;
+    @media(max-width: 1305px) {
+        margin-top: 130px;
+    }
+    @media(max-width: 767px) {
+        margin-top: 75px;
+    }
+}
