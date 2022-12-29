@@ -10,16 +10,16 @@
         max-width: 1440px;
         margin: 0 auto;
 
-        .item {
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-        }
-
         .left {
             display: flex;
             align-items: center;
             gap: 25px;
+
+            .items {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+            }
         }
         .center {
             font-size: 30px;
@@ -79,6 +79,7 @@ header::before {
     display: flex;
     flex-direction: column;
     height: 80px;
+    margin: 0 auto;
     width: 98%;
 }
 .header__icon-wrapper {

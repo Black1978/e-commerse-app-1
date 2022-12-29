@@ -1,0 +1,68 @@
+.categories {
+    max-width: 1440px;
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    height: 80vh;
+    gap: 10px;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        height: fit-content;
+    }
+
+    .col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @media (max-width: 767px) {
+            &:first-child {
+                min-width: 250px;
+            }
+            &:nth-child(2) {
+                min-width: 250px;
+            }
+            &:last-child {
+                min-width: 250px;
+            }
+        }
+
+        .row {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+            overflow: hidden;
+            position: relative;
+
+            .link {
+                width: 100%;
+                height: 100%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .button {
+                position: absolute;
+                min-width: 100px;
+                width: fit-content;
+                height: 50px;
+                border: none;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                cursor: pointer;
+                padding: 10px;
+                background-color: white;
+                font-weight: 500;
+            }
+        }
+    }
+    .col-l {
+        flex: 2;
+    }
+}

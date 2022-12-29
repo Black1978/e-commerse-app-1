@@ -1,13 +1,12 @@
 .slider {
-    height: calc(100vh - 100px);
-    max-width: 1440px;
-
+    height: calc(100vh - 150px);
     .container {
         height: 100%;
         width: 300vw;
         display: flex;
         position: relative;
         transition: all 1s ease;
+        overflow: hidden;
 
         img {
             height: 100%;
