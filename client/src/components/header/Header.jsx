@@ -7,14 +7,17 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import Cart from '../cart/Cart'
+import { useSelector } from 'react-redux'
 
 function Header() {
     const [open, setOpen] = useState(false)
+    const products = useSelector((state) => state.cart.products)
     const handlerIconOnclick = () => {
         document.querySelector('.header__menu').classList.toggle('active')
         document.querySelector('.header__icon').classList.toggle('active')
         document.querySelector('body').classList.toggle('lock')
     }
+    console.log(products)
     return (
         <header className='header'>
             <div className='header__row'>
@@ -79,7 +82,7 @@ function Header() {
                                         <FavoriteBorderOutlinedIcon />
                                         <div className='cartIcon' onClick={() => setOpen(!open)}>
                                             <ShoppingCartOutlinedIcon />
-                                            <span>0</span>
+                                            <span>{products.length}</span>
                                         </div>
                                     </div>
                                 </div>

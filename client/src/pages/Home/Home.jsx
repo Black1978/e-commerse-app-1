@@ -10,7 +10,7 @@ const Home = () => {
             <Slider />
             <FeaturedProducts type='featured' />
             <Categories />
-            <FeaturedProducts type='tranding' />
+            <FeaturedProducts type='trending' />
             <Contact/>
         </div>
     )

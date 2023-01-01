@@ -44,6 +44,7 @@
         .delete {
             color: red;
             font-size: 30px;
+            cursor: pointer;
         }
     }
     .total {
@@ -69,6 +70,7 @@
     }
     .reset {
         font-size: 12px;
+        cursor: pointer;
         color: red;
     }
 }
