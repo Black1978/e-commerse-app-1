@@ -17,7 +17,6 @@ function Header() {
         document.querySelector('.header__icon').classList.toggle('active')
         document.querySelector('body').classList.toggle('lock')
     }
-    console.log(products)
     return (
         <header className='header'>
             <div className='header__row'>
